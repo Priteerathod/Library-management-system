@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      h1{
+        background-color:skyblue;
+        color:red;
+        text-align:center;
+        font-size:20px;
+      }
+      #d{
+        background-color:red;
+        border:2px solid white;
+        border-radius:15px;
+        font-size:20px;
+      }
+      body{
+        background-color:lightgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Do you really want to delete {{book.name}} company</h1>
+    <form method="post">
+      {%csrf_token%}
+    <input type="submit" name="" value="Delete" id='d'>
+    <a href="/">Cancel</a>
+    </form>
+  </body>
+</html>

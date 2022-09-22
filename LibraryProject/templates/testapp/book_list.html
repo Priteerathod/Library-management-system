@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{%extends 'testapp/Home.html'%}
+{%load staticfiles%}
+{%block bodyblock%}
+  <link rel="stylesheet" href="{%static 'css/Home.css'%}">
+  <h2>Library Management System</h2>
+  <table border="1px">
+    <tr>
+      <th>Name</th>
+      <th>Details</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+    {%for c in book_list%}
+    <tr>
+      <td>{{c.name|upper}}</td>
+      <td><a href="/{{c.id}}" class="btn btn-info">Details</a></td>
+      <td><a href="/update/{{c.id}}" class="btn btn-warning">Update</a></td>
+      <td><a href="/delete/{{c.id}}" class="btn btn-danger">Delete</a></td>
+    </tr>
+    {%endfor%}
+  </table><br><br>
+  <a href="/cv" class="btn btn-success btn-lg">Create Book Entry</a>
+{%endblock%}
